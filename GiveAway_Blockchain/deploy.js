@@ -4,7 +4,7 @@ const Web3 = require('web3');
 const {interface, bytecode} = require('./compile.js');
 
 const provider = new HDWalletProvider(
-	//defy wave second park guide exhaust vacuum quick define rookie sphere trip
+	// 'defy wave second park guide exhaust vacuum quick define rookie sphere trip',
 	'identify click toward exhaust outer sketch dune bicycle april pluck album believe',
 	'https://rinkeby.infura.io/v3/fb974d4f6d1e49ad92aad96dcdf610d4'
 );

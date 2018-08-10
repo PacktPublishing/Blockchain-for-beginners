@@ -6,7 +6,7 @@ pragma solidity ^0.4.17;
 contract Contest {
 
     // It maintains manager address who create the contract.
-    address private manager;
+    address public manager;
 
     // It maintains winner address
     address private winnerAddress;
