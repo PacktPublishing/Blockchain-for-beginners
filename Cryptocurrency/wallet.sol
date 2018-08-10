@@ -21,7 +21,6 @@ contract MultiSigWallet {
 
     modifier validOwner() {
         require(msg.sender == _owner || _owners[msg.sender] == 1);
-        //require(_owners[msg.sender] == 1);
         _;
     }
 
@@ -34,43 +33,27 @@ contract MultiSigWallet {
         public {
         // Set master contract owner
         _owner = msg.sender;
-        //_owners[msg.sender] = 1;
     }
 
-    function addOwner(address owner)
-        // isOwner
-        validOwner
-        public {
+    function addOwner(address owner) validOwner public {
         _owners[owner] = 1;
     }
 
-    function removeOwner(address owner)
-        // isOwner
-        // The owner validation was missing
-        validOwner
-        public {
+    function removeOwner(address owner) validOwner public {
         _owners[owner] = 0;
     }
 
-    function ()
-        public
-        payable {
+    function () public payable {
         DepositFunds(msg.sender, msg.value);
     }
 
-    function send()
-      public
-      payable{}
+    function send() public payable{}
 
-    function withdraw(uint amount)
-        validOwner
-        public {
+    function withdraw(uint amount) validOwner public {
         transferTo(msg.sender, amount);
     }
 
-    function transferTo(address to, uint amount)
-        validOwner
-        public {
+    function transferTo(address to, uint amount) validOwner public {
         require(address(this).balance >= amount);
         uint transactionId = _transactionIdx++;
         Transaction memory transaction;
@@ -83,17 +66,11 @@ contract MultiSigWallet {
         TransactionCreated(msg.sender, to, amount, transactionId);
     }
 
-    function getActiveTransactions()
-      validOwner
-      view
-      public
-      returns (uint[]) {
+    function getActiveTransactions() validOwner view public returns (uint[]) {
       return _pendingTransactions;
     }
 
-    function signTransaction(uint transactionId)
-      validOwner
-      public {
+    function signTransaction(uint transactionId) validOwner public {
 
       Transaction storage transaction = _transactions[transactionId];
 
@@ -117,9 +94,7 @@ contract MultiSigWallet {
       }
     }
 
-    function deleteTransaction(uint transactionId)
-      validOwner
-      public {
+    function deleteTransaction(uint transactionId) validOwner public {
       uint8 replace = 0;
       require(_pendingTransactions.length > 0);
       for(uint i = 0; i < _pendingTransactions.length; i++) {
@@ -136,16 +111,11 @@ contract MultiSigWallet {
       delete _transactions[transactionId];
     }
 
-    function getPendingTransactionLength()
-      public
-      view
-      returns (uint) {
+    function getPendingTransactionLength() public view returns (uint) {
       return _pendingTransactions.length;
     }
 
-    function walletBalance()
-        constant
-        public returns (uint) {
+    function walletBalance() constant public returns (uint) {
         return address(this).balance;
     }
 }
