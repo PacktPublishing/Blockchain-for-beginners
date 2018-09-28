@@ -50,3 +50,9 @@ Memory: 8 GB RAM
 
 Storage: > 100 GB
 
+## Related Products
+* [Ethereum Projects [Video]](https://www.packtpub.com/big-data-and-business-intelligence/ethereum-projects-video?utm_source=github&utm_medium=repository&utm_campaign=9781788623261)
+
+* [Learning Blockchain Application Development [Video]](https://www.packtpub.com/application-development/learning-blockchain-application-development-video?utm_source=github&utm_medium=repository&utm_campaign=9781789345728)
+
+* [Blockchain Application Development in 7 Days [Video]](https://www.packtpub.com/application-development/blockchain-application-development-7-days-video?utm_source=github&utm_medium=repository&utm_campaign=9781789341942)
