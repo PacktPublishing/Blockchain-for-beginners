@@ -22,7 +22,7 @@ Now that our dApp has been deployed live on the blockchain we will now create a 
 <LI>Conduct token generation with your own cryptocurrency.
 <LI>Develop your first smart contract and deploy it live to the Ethereum blockchain.
 <LI>Design your dApp’s front-end for user interactions
-<LI> </LI></UL></DIV>
+ </LI></UL></DIV>
 
 ## Instructions and Navigation
 ### Assumed Knowledge
